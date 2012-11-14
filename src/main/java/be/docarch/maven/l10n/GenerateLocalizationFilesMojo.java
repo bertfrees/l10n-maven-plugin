@@ -66,11 +66,11 @@ public class GenerateLocalizationFilesMojo extends AbstractMojo {
 				bundleScanner.setBasedir(inputDirectory);
 				filterScanner.setBasedir(inputDirectory);
 				if (bundles == null)
-					bundleScanner.setIncludes(new String[]{"*.ods"});
+					bundleScanner.setIncludes(new String[]{});
 				else
 					bundleScanner.setIncludes(bundles);
 				if (filters == null)
-					filterScanner.setIncludes(new String[]{"*.ods"});
+					filterScanner.setIncludes(new String[]{});
 				else
 					filterScanner.setIncludes(filters);
 				bundleScanner.scan();
