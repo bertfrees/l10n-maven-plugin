@@ -20,10 +20,10 @@ import org.apache.maven.plugin.MojoExecutionException;
 /**
  * Generate Java resource bundles and/or Maven filters (.properties) files from a OpenOffice spreadsheet (.ods)
  *
- * @goal generate-resources
+ * @goal resources
  * @phase generate-resources
  */
-public class GenerateLocalizationFilesMojo extends AbstractMojo {
+public class ResourcesMojo extends AbstractMojo {
 
 	/**
 	 * This is where ods files are.
