@@ -21,6 +21,7 @@
 		<xsl:result-document href="{concat($dest, '/', $name, '.sql')}" format="text">
 			<xsl:text>SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";&#xA;</xsl:text>
 			<xsl:text>SET time_zone = "+00:00";&#xA;</xsl:text>
+			<xsl:text>SET NAMES 'utf8';&#xA;</xsl:text>
 			<xsl:text>&#xA;</xsl:text>
 			<xsl:text>DROP TABLE IF EXISTS `</xsl:text>
 			<xsl:value-of select="$name"/>
