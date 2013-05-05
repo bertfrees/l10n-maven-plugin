@@ -69,7 +69,7 @@
 	<xsl:function name="my:get-row-values" as="xs:string*">
 		<xsl:param name="table-row"/>
 		<xsl:param name="columns"/>
-		<xsl:for-each select="my:get-row-cells($table-row/table:table-cell[1], $columns)">
+		<xsl:for-each select="my:get-row-cells($table-row, 1, $columns)">
 			<xsl:sequence select='concat("&apos;", replace(string(./text:p), "&apos;", "&apos;&apos;"), "&apos;")'/>
 		</xsl:for-each>
 	</xsl:function>

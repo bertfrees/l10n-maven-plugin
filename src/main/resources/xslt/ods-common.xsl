@@ -23,11 +23,12 @@
 	</xsl:function>
 	
 	<xsl:function name="my:get-row-cells">
-		<xsl:param name="base-cell"/>
-		<xsl:param name="columns"/>
-		<xsl:if test="$columns &gt; 0">
-			<xsl:variable name="next" select="my:get-table-cell($base-cell, 1)"/>
-			<xsl:sequence select="$next, my:get-row-cells($next, $columns - 1)"/>
+		<xsl:param name="row"/>
+		<xsl:param name="start-column"/>
+		<xsl:param name="end-column"/>
+		<xsl:if test="$end-column &gt;= $start-column">
+			<xsl:sequence select="my:get-table-cell($row/table:table-cell[1], $start-column)"/>
+			<xsl:sequence select="my:get-row-cells($row, $start-column + 1, $end-column)"/>
 		</xsl:if>
 	</xsl:function>
 	
